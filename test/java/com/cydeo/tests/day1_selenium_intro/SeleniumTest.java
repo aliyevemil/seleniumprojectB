@@ -9,13 +9,14 @@ public class SeleniumTest {
     public static void main(String[] args) {
 
         //1-setting up the web driver manager
+        // We create our "Browser Driver"
         WebDriverManager.chromedriver().setup();
 
         //2-create instance of the chrome driver
         WebDriver driver = new ChromeDriver();
 
         //3- test if driver is working as expected
-        driver.get("https://www.google.com");
+         driver.get("https://www.google.com/");
 
     }
 
