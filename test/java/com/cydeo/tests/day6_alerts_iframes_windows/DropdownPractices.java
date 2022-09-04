@@ -55,8 +55,11 @@ public class DropdownPractices {
 
 
         //Select year using  : visible text
+        yearDropdown.selectByVisibleText("1923");
         //Select month using   : value attribute
+        monthDropdown.selectByValue("11");
         //Select day using : index number
-        //
+        dayDropdown.selectByIndex(0);
+
     }
 }
