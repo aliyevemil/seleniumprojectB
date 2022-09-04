@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -61,5 +62,24 @@ public class DropdownPractices {
         //Select day using : index number
         dayDropdown.selectByIndex(0);
 
+        //creating expected values
+        String expectYear="1923";
+        String expectMonth="December";
+        String expectDay="1";
+
+        //getting actual values from browser
+        String actualYear =yearDropdown.getFirstSelectedOption().getText();
+        String actualMonth=monthDropdown.getFirstSelectedOption().getText();
+        String actualDay=dayDropdown.getFirstSelectedOption().getText();
+
+        //create assertions
+        Assert.assertTrue(actualYear.equals(expectYear));
+        Assert.assertEquals(actualMonth,expectMonth);
+        Assert.assertEquals(actualDay,expectDay);
+
+    }
+    @AfterMethod
+    public  void teardownMethod(){
+        driver.close();
     }
 }
